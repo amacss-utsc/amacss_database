@@ -1,12 +1,14 @@
-package models;
+package org.amacss.database.models;
 
 import java.util.Date;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 public class Student {
   @Id
-  public int studentNumber;
+  public ObjectId _id;
   
+  public int studentNumber;
   public String name;
   public String email;
   public int membershipType;

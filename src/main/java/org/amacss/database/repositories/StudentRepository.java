@@ -1,0 +1,10 @@
+package org.amacss.database.repositories;
+
+import org.amacss.database.models.Student;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository extends MongoRepository<Student, String>{
+  Student findStudentByStudentNumber(int StudentNumber);
+}
