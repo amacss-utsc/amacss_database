@@ -33,44 +33,25 @@ public class Student {
   public void setStudentNumber(int studentNumber) {
     this.studentNumber = studentNumber;
   }
+  
+  //Setters & Getters, no touching!
+  public String getName() { return name; }
 
-  public String getName() {
-    return name;
-  }
+  public void setName(String name) { this.name = name; }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  public String getEmail() { return email; }
 
-  public String getEmail() {
-    return email;
-  }
+  public void setEmail(String email) { this.email = email; }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+  public int getMembershipType() { return membershipType; }
 
-  public int getMembershipType() {
-    return membershipType;
-  }
+  public void setMembershipType(int membershipType) { this.membershipType = membershipType; }
 
-  public void setMembershipType(int membershipType) {
-    this.membershipType = membershipType;
-  }
+  public Date getExpirationDate() { return expirationDate; }
 
-  public Date getExpirationDate() {
-    return expirationDate;
-  }
+  public void setExpirationDate(Date expirationDate) { this.expirationDate = expirationDate; }
 
-  public void setExpirationDate(Date expirationDate) {
-    this.expirationDate = expirationDate;
-  }
+  public String getPaymentType() { return paymentType; }
 
-  public String getPaymentType() {
-    return paymentType;
-  }
-
-  public void setPaymentType(String paymentType) {
-    this.paymentType = paymentType;
-  }
+  public void setPaymentType(String paymentType) { this.paymentType = paymentType; }
 }   
