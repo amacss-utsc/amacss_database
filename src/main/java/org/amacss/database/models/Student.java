@@ -8,7 +8,6 @@ public class Student {
   @Id
   public ObjectId _id;
   
-  public int studentNumber;
   public String name;
   public String email;
   public int membershipType;
@@ -19,8 +18,8 @@ public class Student {
   public Student() {}
   
   public Student(int studentNumber, String name, String email, 
-                                    int membershipType, Date expirationDate, String paymentType) {
-    this.studentNumber = studentNumber;
+      int membershipType, Date expirationDate, String paymentType, ObjectId _id) {
+    this._id = _id;
     this.name = name;
     this.email = email;
     this.membershipType = membershipType;
@@ -28,15 +27,11 @@ public class Student {
     this.paymentType = paymentType;
   }
 
-  public int getStudentNumber() {
-    return studentNumber;
-  }
-
-  public void setStudentNumber(int studentNumber) {
-    this.studentNumber = studentNumber;
-  }
-  
   //Setters & Getters, no touching!
+  public ObjectId get_id() { return _id; }
+
+  public void set_id(ObjectId _id) { this._id = _id; }
+
   public String getName() { return name; }
 
   public void setName(String name) { this.name = name; }
