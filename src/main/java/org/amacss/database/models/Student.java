@@ -3,10 +3,11 @@ package org.amacss.database.models;
 import java.util.Date;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Student {
-  @Id
-  public ObjectId _id;
+  @Id @Field("_id")
+  public ObjectId studentNumber;
   
   public String name;
   public String email;
@@ -17,9 +18,9 @@ public class Student {
   //Constructors
   public Student() {}
   
-  public Student(int studentNumber, String name, String email, 
-      int membershipType, Date expirationDate, String paymentType, ObjectId _id) {
-    this._id = _id;
+  public Student(String name, String email, int membershipType,
+                        Date expirationDate, String paymentType, ObjectId studentNumber) {
+    this.studentNumber = studentNumber;
     this.name = name;
     this.email = email;
     this.membershipType = membershipType;
@@ -28,9 +29,9 @@ public class Student {
   }
 
   //Setters & Getters, no touching!
-  public ObjectId get_id() { return _id; }
+  public ObjectId getStudentNumber() { return studentNumber; }
 
-  public void set_id(ObjectId _id) { this._id = _id; }
+  public void setStudentNumber(ObjectId studentNumber) { this.studentNumber = studentNumber; }
 
   public String getName() { return name; }
 

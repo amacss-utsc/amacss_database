@@ -32,7 +32,7 @@ public class StudentController {
   @RequestMapping(value = "/{studentNumber}", method = RequestMethod.PUT)
   public void modifyStudentByStudentNumber(@PathVariable("studentNumber") ObjectId studentNumber, 
                                                               @Valid @RequestBody Student student) {
-    student.set_id(studentNumber);
+    student.setStudentNumber(studentNumber);
     repository.save(student);
   }
   
