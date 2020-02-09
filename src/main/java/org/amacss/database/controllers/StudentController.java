@@ -4,6 +4,7 @@ import java.util.List;
 import javax.validation.Valid;
 import org.amacss.database.models.Student;
 import org.amacss.database.repositories.StudentRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,9 +24,9 @@ public class StudentController {
   }
   
   @RequestMapping(value = "/{studentNumber}", method = RequestMethod.PUT)
-  public Student modifyStudentByStudentNumber(@PathVariable("studentNumber") int studentNumber, 
+  public void modifyStudentByStudentNumber(@PathVariable("studentNumber") ObjectId studentNumber, 
                                                               @Valid @RequestBody Student student) {
+    student.set_id(studentNumber);
     repository.save(student);
-    return student;
   }
 }
