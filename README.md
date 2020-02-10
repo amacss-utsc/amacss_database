@@ -1,17 +1,17 @@
-# AMACSS Database
+# :file_folder: AMACSS Database
 
 _Going to write the description soon, too lazy rn_
 
-## Getting Started
+## :rocket: Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+### :taco: Prerequisites
 
 You will need: [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), [MongoDB](https://www.mongodb.com/)
 and [Maven](https://maven.apache.org/).
 
-**Mac**
+:apple: **Mac**
 
 ```
 brew update
@@ -20,7 +20,7 @@ brew install mongodb
 brew cask install homebrew/cask-versions/adoptopenjdk8
 ```
 
-**Linux distributions based on Debian**
+:fire: **Linux distributions based on Debian**
 
 ```
 sudo apt update
@@ -29,7 +29,7 @@ sudo apt install -y mongodb
 apt install openjdk-8-jre-headless
 ```
 
-**Windows**
+:poop: **Windows**
 
 ```
 Go download each package individually, double click them to install. Make sure to set path variables for Maven and Java
@@ -37,7 +37,7 @@ Go download each package individually, double click them to install. Make sure t
 
 ---
 
-### Running the application
+:runner: ### Running the application
 
 1. Clone the repo, then cd into it. Windows users should use `dir`.
 
@@ -73,14 +73,14 @@ spring.data.mongodb.database=amacss
 mvn exec:java
 ```
 
-## Built With
+## :hammer_and_wrench: Built With
 
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Maven](https://maven.apache.org/)
 * [MongoDB](https://www.mongodb.com/)
 
-## Authors
+## :man: Authors
 
-* **Richard Hong** - [H-Richard](https://github.com/H-Richard)
+* :sweet_potato: **Richard Hong** - [H-Richard](https://github.com/H-Richard)
 
 See also the list of [contributors](https://github.com/amacss-utsc/amacss_database/contributors) who participated in this project.
