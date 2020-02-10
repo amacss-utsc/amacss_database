@@ -1,6 +1,7 @@
 package org.amacss.database.models;
 
 import java.util.Date;
+import org.amacss.database.Utils;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -19,8 +20,8 @@ public class Student {
   public Student() {}
   
   public Student(String name, String email, int membershipType,
-                        Date expirationDate, String paymentType, ObjectId studentNumber) {
-    this.studentNumber = studentNumber;
+                        Date expirationDate, String paymentType, int studentNumber) {
+    this.studentNumber = Utils.studentNumberToObjectId(studentNumber);
     this.name = name;
     this.email = email;
     this.membershipType = membershipType;
@@ -29,9 +30,10 @@ public class Student {
   }
 
   //Setters & Getters, no touching!
-  public ObjectId getStudentNumber() { return studentNumber; }
+  public int getStudentNumber() { return Utils.objectIdToStudentNumber(studentNumber); }
 
-  public void setStudentNumber(ObjectId studentNumber) { this.studentNumber = studentNumber; }
+  public void setStudentNumber(int studentNumber) { 
+                            this.studentNumber = Utils.studentNumberToObjectId(studentNumber); }
 
   public String getName() { return name; }
 

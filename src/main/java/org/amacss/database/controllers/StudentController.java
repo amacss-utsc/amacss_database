@@ -3,6 +3,7 @@ package org.amacss.database.controllers;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
+import org.amacss.database.Utils;
 import org.amacss.database.models.Student;
 import org.amacss.database.repositories.StudentRepository;
 import org.bson.types.ObjectId;
@@ -25,12 +26,12 @@ public class StudentController {
   }
   
   @RequestMapping(value = "/{studentNumber}", method = RequestMethod.GET)
-  public Optional<Student> getStudentById(@PathVariable("studentNumber") ObjectId studentNumber) {
-    return repository.findById(studentNumber);
+  public Optional<Student> getStudentById(@PathVariable("studentNumber") int studentNumber) {
+    return repository.findById(Utils.studentNumberToObjectId(studentNumber));
   }
   
   @RequestMapping(value = "/{studentNumber}", method = RequestMethod.PUT)
-  public void modifyStudentByStudentNumber(@PathVariable("studentNumber") ObjectId studentNumber, 
+  public void modifyStudentByStudentNumber(@PathVariable("studentNumber") int studentNumber, 
                                                               @Valid @RequestBody Student student) {
     student.setStudentNumber(studentNumber);
     repository.save(student);
